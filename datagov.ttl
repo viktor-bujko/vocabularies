@@ -1,0 +1,7 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+
+<https://data.gov.cz/slovník/podmínky-užití/Specifikace>
+  a rdfs:Class ;
+  rdfs:label "Specifikace podmínek užití"@cs, "Terms of use specification"@en ;
+  rdfs:subClassOf dc:LicenseDocument .
