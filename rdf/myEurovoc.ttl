@@ -1,12 +1,26 @@
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dc: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix my:  <https://viktor-bujko.github.io/vocabularies/rdf/> .
+@prefix my:  <http://www.example.org/My#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 
 my:MyStructure
-  rdfs:label "Eurovoc Example Structure"@en ;
-  rdfs:isDefinedBy <https://viktor-bujko.github.io/vocabularies/rdf/> ;
-  dc:description "An example structure class"@en ;
-  a owl:Class .
+  a rdfs:Class ;
+  rdfs:label "Test structure"@en ;
+  rdfs:label "Test struktura"@cs ;
+  rdfs:comment "My structure definition."@en ;
+  rdfs:subClassOf my:NonExistent .
+
+my:eurovocConcept
+  a rdf:Property ;
+  rdfs:comment "Represents an eurovoc concept"@en ;
+  rdfs:label  "Eurovoc concept"@en ;
+  rdfs:label  "Eurovoc koncept"@sk ;
+  rdfs:domain my:MyStructure ;
+  rdfs:range  dcat:theme .
+
+my:relatedDataset
+  a rdf:Property ;
+  rdfs:comment "Dataset related to an eurovoc concept."@en ;
+  rdfs:label "Related dataset"@en ;
+  rdfs:domain my:MyStructure ;
+  rdfs:range dcat:Dataset .
