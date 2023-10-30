@@ -1,30 +1,23 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix space: <http://example.org/Space#> .
 
 space:Planet
   rdf:type rdfs:Class ;
   rdfs:label "Planet class"@en ;
   rdfs:comment "Comment for a planet."@en ;
-  skos:definition "Definice tridy planeta."@cs ;
-  skos:definition "Definition of a planet class."@en ;
   rdfs:subClassOf space:CelestialBody .
 
 space:Satellite
   rdf:type rdfs:Class ;
   rdfs:label "Satellite class"@en ;
   rdfs:comment "Comment of a satellite."@en ;
-  skos:definition "Definice tridy satelit."@cs ;
-  skos:definition "Definition of a satellite class."@en ;
   rdfs:subClassOf  space:CelestialBody .
 
 space:ArtificialSatellite
   rdf:type rdfs:Class ;
   rdfs:label "Artificial satellite class"@en ;
   rdfs:comment "Comment for an artificial satellite."@en ;
-  skos:definition "Definice tridy umely satelit."@cs ;
-  skos:definition "Definition of an artificial satellite class."@en ;
   rdfs:subClassOf  space:Satellite .
 
 space:satelliteOf
