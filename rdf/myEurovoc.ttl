@@ -21,8 +21,7 @@ my:eurovocConcept
   rdfs:range  skos:Concept .
 
 dcat:theme
-  rdfs:domain my:MyStructure ;
-  rdfs:range rdfs:Literal .
+  rdfs:domain my:MyStructure .
 
 my:relatedDataset
   a rdf:Property ;
