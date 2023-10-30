@@ -3,10 +3,10 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix my:  <https://viktor-bujko.github.io/vocabularies/rdf/> .
 
-dcat:MyStructure
+my:MyStructure
   rdfs:label "Eurovoc Example Structure"@en ;
-  rdfs:isDefinedBy <http://www.w3.org/ns/dcat#> ;
+  rdfs:isDefinedBy <https://viktor-bujko.github.io/vocabularies/rdf/> ;
   dc:description "An example structure class"@en ;
   a owl:Class .
