@@ -16,7 +16,11 @@ my:eurovocConcept
   rdfs:label  "Eurovoc concept"@en ;
   rdfs:label  "Eurovoc koncept"@sk ;
   rdfs:domain my:MyStructure ;
-  rdfs:range  dcat:theme .
+  rdfs:range  skos:Concept .
+
+dcat:theme
+  rdfs:domain my:MyStructure ;
+  rdfs:range xsd:string .
 
 my:relatedDataset
   a rdf:Property ;
