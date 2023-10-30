@@ -32,8 +32,7 @@ space:CelestialBody
   rdf:type rdfs:Class ;
   rdfs:label "Astronomical object"@en ;
   rdfs:comment "A naturally occurring physical entity, association, or structure that exists within the observable universe."@en ;
-  skos:definition "A naturally occurring physical entity, association, or structure that exists within the observable universe."@en ;
-  rdfs:subClassOf owl:Thing .
+  skos:definition "A naturally occurring physical entity, association, or structure that exists within the observable universe."@en .
 
 space:satelliteOf
   rdf:type rdf:Property ;
