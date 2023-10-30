@@ -22,7 +22,7 @@ my:eurovocConcept
 
 dcat:theme
   rdfs:domain my:MyStructure ;
-  rdfs:range xsd:string .
+  rdfs:range rdfs:Literal .
 
 my:relatedDataset
   a rdf:Property ;
