@@ -29,7 +29,6 @@ space:ArtificialSatellite
 
 space:CelestialBody
   rdf:type rdfs:Class ;
-  rdfs:label "Astronomický objekt"@cs ;
   rdfs:label "Astronomical object"@en ;
   rdfs:comment "A naturally occurring physical entity, association, or structure that exists within the observable universe."@en ;
   skos:definition "A naturally occurring physical entity, association, or structure that exists within the observable universe."@en ;
