@@ -2,6 +2,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix space: <http://example.org/Space#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 space:Planet
   rdf:type rdfs:Class ;
@@ -32,7 +33,7 @@ space:CelestialBody
   rdfs:label "Astronomical object"@en ;
   rdfs:comment "A naturally occurring physical entity, association, or structure that exists within the observable universe."@en ;
   skos:definition "A naturally occurring physical entity, association, or structure that exists within the observable universe."@en ;
-  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf owl:Thing .
 
 space:satelliteOf
   rdf:type rdf:Property ;
