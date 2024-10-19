@@ -4,7 +4,7 @@
 @prefix : <https://ontology.example.com/genapp/application_graph/>.
 @prefix edge: <https://ontology.example.com/genapp/application_graph/edge/>.
 @prefix node: <https://ontology.example.com/genapp/application_graph/node/>.
-@prefix datasource: <https://ontology.example.com/genapp/application_graph/datasource>.
+@prefix datasource: <https://ontology.example.com/genapp/application_graph/datasource/>.
 @prefix endpoint: <https://ontology.example.com/genapp/application_graph/datasource/endpoint/>.
 
 <https://ontology.example.com/genapp/application_graph/> a owl:Ontology.
