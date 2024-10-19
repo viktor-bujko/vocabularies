@@ -1,0 +1,680 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix : <https://ontology.example.com/genapp/application_graph/>.
+
+<https://ontology.example.com/genapp/application_graph/> a owl:Ontology.
+:Datasource a owl:Class, rdfs:Class;
+    rdfs:label "Datasource"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>.
+:datasourceEndpointUri a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Endpoint Uri"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :Datasource;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#string>.
+:dataSourceLabel a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "label"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :Datasource;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#string>.
+:endpointUri a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Endpoint URI"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :Datasource;
+    rdfs:range <https://ontology.example.com/genapp/application_graph/EndpointUri>.
+:datasourceFormat a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "format"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :Datasource;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#string>.
+:ApplicationGraphEdge a owl:Class, rdfs:Class;
+    rdfs:label "Application graph edge"@en, "Hrana aplikačného grafu"@sk;
+    rdfs:comment "An edge represents a transition between the nodes in the graph. An edge allows the user of the generated application to move from one capability performed on an aggregate to other capability performed on another aggregate."@en, "Hrana aplikačného grafu"@sk;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Class, owl:Class.
+:edgeIri a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Edge IRI"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :ApplicationGraphEdge;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
+:edgeType a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Edge Type"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :ApplicationGraphEdge;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#string>.
+:sourceNode a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Source Node"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :ApplicationGraphEdge;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
+:targetNode a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Target Node"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :ApplicationGraphEdge;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
+:Applicationgraph a owl:Class, rdfs:Class;
+    rdfs:label "Application Graph"@en, "Aplikačný graf"@sk;
+    rdfs:comment "Represents the structure for generator's application graph. Application graph serves as a model of the application to be generated and is a formal representation of user's requirements on the application content."@en, "Táto trieda reprezentuje štruktúru aplikačného grafu. Aplikačný graf slúži ako model pre generovanú aplikáciu a poskytuje spôsob, ako formálne zachytávať požiadavky používateľa na obsah vygenerovanej aplikácie."@sk;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Class, owl:Class.
+:edges a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Edges"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :Applicationgraph;
+    rdfs:range <https://ontology.example.com/genapp/application_graph/ApplicationGraphEdge>.
+:label a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "label"@en;
+    rdfs:comment "The label or name of the application graph. Label is a human-readable graph identifier."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :Applicationgraph;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#string>.
+:dataspecification a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "dataspecification"@en;
+    rdfs:comment "IRI of a Dataspecer data specification from which the application is to be generated. All IRIs within application graph nodes refer to structural models within the context of this data specification."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :Applicationgraph;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
+:nodes a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Nodes"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :Applicationgraph;
+    rdfs:range <https://ontology.example.com/genapp/application_graph/ApplicationGraphNode>.
+:datasources a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Datasources"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :Applicationgraph;
+    rdfs:range <https://ontology.example.com/genapp/application_graph/Datasource>.
+rdf:Alt a owl:Class, rdfs:Class;
+    rdfs:label "Alt"@en;
+    rdfs:comment "The class of containers of alternatives."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Container, owl:Thing.
+rdf:Bag a owl:Class, rdfs:Class;
+    rdfs:label "Bag"@en;
+    rdfs:comment "The class of unordered containers."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Container, owl:Thing.
+rdf:CompoundLiteral a owl:Class, rdfs:Class;
+    rdfs:label "CompoundLiteral"@en;
+    rdfs:comment "A class representing a compound literal."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+rdf:direction a rdf:Property, owl:ObjectProperty;
+    rdfs:label "direction"@en;
+    rdfs:comment "The base direction component of a CompoundLiteral."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:CompoundLiteral;
+    a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "direction"@en;
+    rdfs:comment "The base direction component of a CompoundLiteral."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:CompoundLiteral.
+rdf:language a rdf:Property, owl:ObjectProperty;
+    rdfs:label "language"@en;
+    rdfs:comment "The language component of a CompoundLiteral."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:CompoundLiteral;
+    a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "language"@en;
+    rdfs:comment "The language component of a CompoundLiteral."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:CompoundLiteral.
+rdf:List a owl:Class, rdfs:Class;
+    rdfs:label "List"@en;
+    rdfs:comment "The class of RDF Lists."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+rdf:first a rdf:Property, owl:ObjectProperty;
+    rdfs:label "first"@en;
+    rdfs:comment "The first item in the subject RDF list."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:List.
+rdf:rest a rdf:Property, owl:ObjectProperty;
+    rdfs:label "rest"@en;
+    rdfs:comment "The rest of the subject RDF list after the first item."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:List;
+    rdfs:range rdf:List.
+rdf:Property a owl:Class, rdfs:Class;
+    rdfs:label "Property"@en;
+    rdfs:comment "The class of RDF properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+rdfs:domain a rdf:Property, owl:ObjectProperty;
+    rdfs:label "domain"@en;
+    rdfs:comment "A domain of the subject property."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:Property;
+    rdfs:range rdfs:Class.
+rdfs:range a rdf:Property, owl:ObjectProperty;
+    rdfs:label "range"@en;
+    rdfs:comment "A range of the subject property."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:Property;
+    rdfs:range rdfs:Class.
+rdfs:subPropertyOf a rdf:Property, owl:ObjectProperty;
+    rdfs:label "subPropertyOf"@en;
+    rdfs:comment "The subject is a subproperty of a property."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:Property;
+    rdfs:range rdf:Property.
+owl:equivalentProperty a rdf:Property, owl:ObjectProperty;
+    rdfs:label "equivalentProperty"@en;
+    rdfs:comment "The property that determines that two given properties are equivalent."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:Property;
+    rdfs:range rdf:Property.
+owl:propertyDisjointWith a rdf:Property, owl:ObjectProperty;
+    rdfs:label "propertyDisjointWith"@en;
+    rdfs:comment "The property that determines that two given properties are disjoint."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:Property;
+    rdfs:range rdf:Property.
+rdf:Seq a owl:Class, rdfs:Class;
+    rdfs:label "Seq"@en;
+    rdfs:comment "The class of ordered containers."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Container, owl:Thing.
+rdf:Statement a owl:Class, rdfs:Class;
+    rdfs:label "Statement"@en;
+    rdfs:comment "The class of RDF statements."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+rdf:object a rdf:Property, owl:ObjectProperty;
+    rdfs:label "object"@en;
+    rdfs:comment "The object of the subject RDF statement."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:Statement.
+rdf:predicate a rdf:Property, owl:ObjectProperty;
+    rdfs:label "predicate"@en;
+    rdfs:comment "The predicate of the subject RDF statement."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:Statement.
+rdf:subject a rdf:Property, owl:ObjectProperty;
+    rdfs:label "subject"@en;
+    rdfs:comment "The subject of the subject RDF statement."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdf:Statement.
+rdfs:Class a owl:Class, rdfs:Class;
+    rdfs:label "Class"@en;
+    rdfs:comment "The class of classes."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+rdfs:subClassOf a rdf:Property, owl:ObjectProperty;
+    rdfs:label "subClassOf"@en;
+    rdfs:comment "The subject is a subclass of a class."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdfs:Class;
+    rdfs:range rdfs:Class.
+owl:equivalentClass a rdf:Property, owl:ObjectProperty;
+    rdfs:label "equivalentClass"@en;
+    rdfs:comment "The property that determines that two given classes are equivalent, and that is used to specify datatype definitions."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdfs:Class;
+    rdfs:range rdfs:Class.
+owl:intersectionOf a rdf:Property, owl:ObjectProperty;
+    rdfs:label "intersectionOf"@en;
+    rdfs:comment "The property that determines the collection of classes or data ranges that build an intersection."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdfs:Class;
+    rdfs:range rdf:List.
+owl:oneOf a rdf:Property, owl:ObjectProperty;
+    rdfs:label "oneOf"@en;
+    rdfs:comment "The property that determines the collection of individuals or data values that build an enumeration."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdfs:Class;
+    rdfs:range rdf:List.
+owl:unionOf a rdf:Property, owl:ObjectProperty;
+    rdfs:label "unionOf"@en;
+    rdfs:comment "The property that determines the collection of classes or data ranges that build a union."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdfs:Class;
+    rdfs:range rdf:List.
+rdfs:Container a owl:Class, rdfs:Class;
+    rdfs:label "Container"@en;
+    rdfs:comment "The class of RDF containers."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+rdfs:ContainerMembershipProperty a owl:Class, rdfs:Class;
+    rdfs:label "ContainerMembershipProperty"@en;
+    rdfs:comment "The class of container membership properties, rdf:_1, rdf:_2, ...,\r\n                    all of which are sub-properties of 'member'."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdf:Property, owl:Thing.
+rdfs:Datatype a owl:Class, rdfs:Class;
+    rdfs:label "Datatype"@en;
+    rdfs:comment "The class of RDF datatypes."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Class, owl:Thing.
+owl:datatypeComplementOf a rdf:Property, owl:ObjectProperty;
+    rdfs:label "datatypeComplementOf"@en;
+    rdfs:comment "The property that determines that a given data range is the complement of another data range with respect to the data domain."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdfs:Datatype;
+    rdfs:range rdfs:Datatype.
+owl:onDatatype a rdf:Property, owl:ObjectProperty;
+    rdfs:label "onDatatype"@en;
+    rdfs:comment "The property that determines the datatype that a datatype restriction refers to."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdfs:Datatype;
+    rdfs:range rdfs:Datatype.
+owl:withRestrictions a rdf:Property, owl:ObjectProperty;
+    rdfs:label "withRestrictions"@en;
+    rdfs:comment "The property that determines the collection of facet-value pairs that define a datatype restriction."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain rdfs:Datatype;
+    rdfs:range rdf:List.
+rdfs:Literal a owl:Class, rdfs:Class;
+    rdfs:label "Literal"@en;
+    rdfs:comment "The class of literal values, eg. textual strings and integers."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+rdfs:Resource a owl:Class, rdfs:Class;
+    rdfs:label "Resource"@en;
+    rdfs:comment "The class resource, everything."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf owl:Thing.
+owl:AllDifferent a owl:Class, rdfs:Class;
+    rdfs:label "AllDifferent"@en;
+    rdfs:comment "The class of collections of pairwise different individuals."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+owl:distinctMembers a rdf:Property, owl:ObjectProperty;
+    rdfs:label "distinctMembers"@en;
+    rdfs:comment "The property that determines the collection of pairwise different individuals in a owl:AllDifferent axiom."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:AllDifferent;
+    rdfs:range rdf:List.
+owl:AllDisjointClasses a owl:Class, rdfs:Class;
+    rdfs:label "AllDisjointClasses"@en;
+    rdfs:comment "The class of collections of pairwise disjoint classes."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+owl:AllDisjointProperties a owl:Class, rdfs:Class;
+    rdfs:label "AllDisjointProperties"@en;
+    rdfs:comment "The class of collections of pairwise disjoint properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+owl:Annotation a owl:Class, rdfs:Class;
+    rdfs:label "Annotation"@en;
+    rdfs:comment "The class of annotated annotations for which the RDF serialization consists of an annotated subject, predicate and object."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+owl:AnnotationProperty a owl:Class, rdfs:Class;
+    rdfs:label "AnnotationProperty"@en;
+    rdfs:comment "The class of annotation properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdf:Property, owl:Thing.
+owl:AsymmetricProperty a owl:Class, rdfs:Class;
+    rdfs:label "AsymmetricProperty"@en;
+    rdfs:comment "The class of asymmetric properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf owl:ObjectProperty, owl:Thing.
+owl:Axiom a owl:Class, rdfs:Class;
+    rdfs:label "Axiom"@en;
+    rdfs:comment "The class of annotated axioms for which the RDF serialization consists of an annotated subject, predicate and object."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+owl:Class a owl:Class, rdfs:Class;
+    rdfs:label "Class"@en;
+    rdfs:comment "The class of OWL classes."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Class, owl:Thing.
+owl:complementOf a rdf:Property, owl:ObjectProperty;
+    rdfs:label "complementOf"@en;
+    rdfs:comment "The property that determines that a given class is the complement of another class."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Class;
+    rdfs:range owl:Class.
+owl:disjointUnionOf a rdf:Property, owl:ObjectProperty;
+    rdfs:label "disjointUnionOf"@en;
+    rdfs:comment "The property that determines that a given class is equivalent to the disjoint union of a collection of other classes."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Class;
+    rdfs:range rdf:List.
+owl:disjointWith a rdf:Property, owl:ObjectProperty;
+    rdfs:label "disjointWith"@en;
+    rdfs:comment "The property that determines that two given classes are disjoint."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Class;
+    rdfs:range owl:Class.
+owl:hasKey a rdf:Property, owl:ObjectProperty;
+    rdfs:label "hasKey"@en;
+    rdfs:comment "The property that determines the collection of properties that jointly build a key."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Class;
+    rdfs:range rdf:List.
+owl:DataRange a owl:Class, rdfs:Class;
+    rdfs:label "DataRange"@en;
+    rdfs:comment "The class of OWL data ranges, which are special kinds of datatypes. Note: The use of the IRI owl:DataRange has been deprecated as of OWL 2. The IRI rdfs:Datatype SHOULD be used instead."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Datatype, owl:Thing.
+owl:DatatypeProperty a owl:Class, rdfs:Class;
+    rdfs:label "DatatypeProperty"@en;
+    rdfs:comment "The class of data properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdf:Property, owl:Thing.
+owl:DeprecatedClass a owl:Class, rdfs:Class;
+    rdfs:label "DeprecatedClass"@en;
+    rdfs:comment "The class of deprecated classes."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Class, owl:Thing.
+owl:DeprecatedProperty a owl:Class, rdfs:Class;
+    rdfs:label "DeprecatedProperty"@en;
+    rdfs:comment "The class of deprecated properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdf:Property, owl:Thing.
+owl:FunctionalProperty a owl:Class, rdfs:Class;
+    rdfs:label "FunctionalProperty"@en;
+    rdfs:comment "The class of functional properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdf:Property, owl:Thing.
+owl:InverseFunctionalProperty a owl:Class, rdfs:Class;
+    rdfs:label "InverseFunctionalProperty"@en;
+    rdfs:comment "The class of inverse-functional properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf owl:ObjectProperty, owl:Thing.
+owl:IrreflexiveProperty a owl:Class, rdfs:Class;
+    rdfs:label "IrreflexiveProperty"@en;
+    rdfs:comment "The class of irreflexive properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf owl:ObjectProperty, owl:Thing.
+owl:NamedIndividual a owl:Class, rdfs:Class;
+    rdfs:label "NamedIndividual"@en;
+    rdfs:comment "The class of named individuals."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf owl:Thing.
+owl:NegativePropertyAssertion a owl:Class, rdfs:Class;
+    rdfs:label "NegativePropertyAssertion"@en;
+    rdfs:comment "The class of negative property assertions."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+owl:assertionProperty a rdf:Property, owl:ObjectProperty;
+    rdfs:label "assertionProperty"@en;
+    rdfs:comment "The property that determines the predicate of a negative property assertion."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:NegativePropertyAssertion;
+    rdfs:range rdf:Property.
+owl:sourceIndividual a rdf:Property, owl:ObjectProperty;
+    rdfs:label "sourceIndividual"@en;
+    rdfs:comment "The property that determines the subject of a negative property assertion."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:NegativePropertyAssertion.
+owl:targetIndividual a rdf:Property, owl:ObjectProperty;
+    rdfs:label "targetIndividual"@en;
+    rdfs:comment "The property that determines the object of a negative object property assertion."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:NegativePropertyAssertion.
+owl:targetValue a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "targetValue"@en;
+    rdfs:comment "The property that determines the value of a negative data property assertion."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:NegativePropertyAssertion;
+    rdfs:range rdfs:Literal.
+owl:Nothing a owl:Class, rdfs:Class;
+    rdfs:label "Nothing"@en;
+    rdfs:comment "This is the empty class."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf owl:Thing.
+owl:ObjectProperty a owl:Class, rdfs:Class;
+    rdfs:label "ObjectProperty"@en;
+    rdfs:comment "The class of object properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdf:Property, owl:Thing.
+owl:inverseOf a rdf:Property, owl:ObjectProperty;
+    rdfs:label "inverseOf"@en;
+    rdfs:comment "The property that determines that two given properties are inverse."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:ObjectProperty;
+    rdfs:range owl:ObjectProperty.
+owl:propertyChainAxiom a rdf:Property, owl:ObjectProperty;
+    rdfs:label "propertyChainAxiom"@en;
+    rdfs:comment "The property that determines the n-tuple of properties that build a sub property chain of a given property."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:ObjectProperty;
+    rdfs:range rdf:List.
+owl:Ontology a owl:Class, rdfs:Class;
+    rdfs:label "Ontology"@en;
+    rdfs:comment "The class of ontologies."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Resource, owl:Thing.
+owl:OntologyProperty a owl:Class, rdfs:Class;
+    rdfs:label "OntologyProperty"@en;
+    rdfs:comment "The class of ontology properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdf:Property, owl:Thing.
+owl:ReflexiveProperty a owl:Class, rdfs:Class;
+    rdfs:label "ReflexiveProperty"@en;
+    rdfs:comment "The class of reflexive properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf owl:ObjectProperty, owl:Thing.
+owl:Restriction a owl:Class, rdfs:Class;
+    rdfs:label "Restriction"@en;
+    rdfs:comment "The class of property restrictions."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf owl:Class, owl:Thing.
+owl:allValuesFrom a rdf:Property, owl:ObjectProperty;
+    rdfs:label "allValuesFrom"@en;
+    rdfs:comment "The property that determines the class that a universal property restriction refers to."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction;
+    rdfs:range rdfs:Class.
+owl:cardinality a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "cardinality"@en;
+    rdfs:comment "The property that determines the cardinality of an exact cardinality restriction."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#nonNegativeInteger>.
+owl:hasSelf a rdf:Property, owl:ObjectProperty;
+    rdfs:label "hasSelf"@en;
+    rdfs:comment "The property that determines the property that a self restriction refers to."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction.
+owl:hasValue a rdf:Property, owl:ObjectProperty;
+    rdfs:label "hasValue"@en;
+    rdfs:comment "The property that determines the individual that a has-value restriction refers to."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction.
+owl:maxCardinality a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "maxCardinality"@en;
+    rdfs:comment "The property that determines the cardinality of a maximum cardinality restriction."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#nonNegativeInteger>.
+owl:maxQualifiedCardinality a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "maxQualifiedCardinality"@en;
+    rdfs:comment "The property that determines the cardinality of a maximum qualified cardinality restriction."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#nonNegativeInteger>.
+owl:minCardinality a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "minCardinality"@en;
+    rdfs:comment "The property that determines the cardinality of a minimum cardinality restriction."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#nonNegativeInteger>.
+owl:minQualifiedCardinality a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "minQualifiedCardinality"@en;
+    rdfs:comment "The property that determines the cardinality of a minimum qualified cardinality restriction."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#nonNegativeInteger>.
+owl:onClass a rdf:Property, owl:ObjectProperty;
+    rdfs:label "onClass"@en;
+    rdfs:comment "The property that determines the class that a qualified object cardinality restriction refers to."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction;
+    rdfs:range owl:Class.
+owl:onDataRange a rdf:Property, owl:ObjectProperty;
+    rdfs:label "onDataRange"@en;
+    rdfs:comment "The property that determines the data range that a qualified data cardinality restriction refers to."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction;
+    rdfs:range rdfs:Datatype.
+owl:onProperties a rdf:Property, owl:ObjectProperty;
+    rdfs:label "onProperties"@en;
+    rdfs:comment "The property that determines the n-tuple of properties that a property restriction on an n-ary data range refers to."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction;
+    rdfs:range rdf:List.
+owl:onProperty a rdf:Property, owl:ObjectProperty;
+    rdfs:label "onProperty"@en;
+    rdfs:comment "The property that determines the property that a property restriction refers to."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction;
+    rdfs:range rdf:Property.
+owl:qualifiedCardinality a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "qualifiedCardinality"@en;
+    rdfs:comment "The property that determines the cardinality of an exact qualified cardinality restriction."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#nonNegativeInteger>.
+owl:someValuesFrom a rdf:Property, owl:ObjectProperty;
+    rdfs:label "someValuesFrom"@en;
+    rdfs:comment "The property that determines the class that an existential property restriction refers to."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain owl:Restriction;
+    rdfs:range rdfs:Class.
+owl:SymmetricProperty a owl:Class, rdfs:Class;
+    rdfs:label "SymmetricProperty"@en;
+    rdfs:comment "The class of symmetric properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf owl:ObjectProperty, owl:Thing.
+owl:TransitiveProperty a owl:Class, rdfs:Class;
+    rdfs:label "TransitiveProperty"@en;
+    rdfs:comment "The class of transitive properties."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf owl:ObjectProperty, owl:Thing.
+<https://ontology.example.com/genapp/application_graph/ApplicationGraphNode> a owl:Class, rdfs:Class;
+    rdfs:label "Application graph node"@en, "Uzol aplikačného grafu"@sk;
+    rdfs:comment "An application graph node represents a unit of the generated application, i.e. an isolated, functional unit to be generated, through which application users fulfill their needs."@en, "Uzol aplikačného grafu"@sk;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Class, owl:Class.
+<https://my-model-nhrvt.iri.todo.com/entities/nodeIri> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Node IRI"@en;
+    rdfs:comment "Unique identification of an application node"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :ApplicationGraphNode;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
+<https://my-model-nhrvt.iri.todo.com/entities/config> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "config"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :ApplicationGraphNode;
+    rdfs:range <https://ontology.example.com/genapp/application_graph/NodeConfiguration>.
+<https://my-model-nhrvt.iri.todo.com/entities/structure> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "structure"@en;
+    rdfs:comment "IRI of a Dataspecer data structure model that this node instance refers to. Represents the subject instance on which a capability will be performed."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :ApplicationGraphNode;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
+<https://my-model-nhrvt.iri.todo.com/entities/nodeLabel> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Node Label"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :ApplicationGraphNode;
+    rdfs:range rdf:langString.
+<https://my-model-nhrvt.iri.todo.com/entities/capability> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "capability"@en;
+    rdfs:comment "IRI of a supported capability to be performed on a data structure model."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :ApplicationGraphNode;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
+<https://ontology.example.com/genapp/application_graph/NodeConfiguration> a owl:Class, rdfs:Class;
+    rdfs:label "Node configuration"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:subClassOf rdfs:Class, owl:Class.
+<https://my-model-nhrvt.iri.todo.com/entities/starting> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "starting"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :NodeConfiguration;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#boolean>.
+<https://my-model-nhrvt.iri.todo.com/entities/pageTitle> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Page Title"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :NodeConfiguration;
+    rdfs:range rdf:langString.
+<https://ontology.example.com/genapp/application_graph/EndpointUri> a owl:Class, rdfs:Class;
+    rdfs:label "Endpoint Uri"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>.
+<https://my-model-nhrvt.iri.todo.com/entities/datasourceUriRead> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "read"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :EndpointUri;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
+<https://my-model-nhrvt.iri.todo.com/entities/datasourceUriWrite> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "write"@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:domain :EndpointUri;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
+owl:topObjectProperty a rdf:Property, owl:ObjectProperty;
+    rdfs:label "topObjectProperty"@en;
+    rdfs:comment "The object property that relates every two individuals."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>.
+owl:bottomObjectProperty a rdf:Property, owl:ObjectProperty;
+    rdfs:label "bottomObjectProperty"@en;
+    rdfs:comment "The object property that does not relate any two individuals."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>.
+owl:topDataProperty a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "topDataProperty"@en;
+    rdfs:comment "The data property that relates every individual to every data value."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:range rdfs:Literal.
+owl:bottomDataProperty a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "bottomDataProperty"@en;
+    rdfs:comment "The data property that does not relate any individual to any data value."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:range rdfs:Literal.
+owl:sameAs a rdf:Property, owl:ObjectProperty;
+    rdfs:label "sameAs"@en;
+    rdfs:comment "The property that determines that two given individuals are equal."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>.
+owl:members a rdf:Property, owl:ObjectProperty;
+    rdfs:label "members"@en;
+    rdfs:comment "The property that determines the collection of members in either a owl:AllDifferent, owl:AllDisjointClasses or owl:AllDisjointProperties axiom."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:range rdf:List.
+owl:differentFrom a rdf:Property, owl:ObjectProperty;
+    rdfs:label "differentFrom"@en;
+    rdfs:comment "The property that determines that two given individuals are different."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>.
+owl:annotatedTarget a rdf:Property, owl:ObjectProperty;
+    rdfs:label "annotatedTarget"@en;
+    rdfs:comment "The property that determines the object of an annotated axiom or annotated annotation."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>.
+owl:annotatedSource a rdf:Property, owl:ObjectProperty;
+    rdfs:label "annotatedSource"@en;
+    rdfs:comment "The property that determines the subject of an annotated axiom or annotated annotation."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>.
+owl:annotatedProperty a rdf:Property, owl:ObjectProperty;
+    rdfs:label "annotatedProperty"@en;
+    rdfs:comment "The property that determines the predicate of an annotated axiom or annotated annotation."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>.
+rdfs:member a rdf:Property, owl:ObjectProperty;
+    rdfs:label "member"@en;
+    rdfs:comment "A member of the subject resource."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>.
+rdfs:isDefinedBy a rdf:Property, owl:ObjectProperty;
+    rdfs:label "isDefinedBy"@en;
+    rdfs:comment "The defininition of the subject resource."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>.
+rdfs:seeAlso a rdf:Property, owl:ObjectProperty;
+    rdfs:label "seeAlso"@en;
+    rdfs:comment "Further information about the subject resource."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>.
+rdfs:label a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "label"@en;
+    rdfs:comment "A human-readable name for the subject."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:range rdfs:Literal.
+rdfs:comment a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "comment"@en;
+    rdfs:comment "A description of the subject resource."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:range rdfs:Literal.
+rdf:value a rdf:Property, owl:ObjectProperty;
+    rdfs:label "value"@en;
+    rdfs:comment "Idiomatic property used for structured values."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>.
+rdf:type a rdf:Property, owl:ObjectProperty;
+    rdfs:label "type"@en;
+    rdfs:comment "The subject is an instance of a class."@en;
+    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:range rdfs:Class.
