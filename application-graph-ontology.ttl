@@ -2,7 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 
-<https://ontology.example.com/genapp/application_graph/> a owl:Ontology.
+<> a owl:Ontology.
 <https://ontology.example.com/genapp/application_graph/Edge> a owl:Class, rdfs:Class;
     rdfs:label "Edge"@en;
     rdfs:comment "An edge represents a transition between the nodes in the graph. An edge allows the user of the generated application to move from one capability performed on an aggregate to other capability performed on another aggregate."@en;
@@ -539,6 +539,11 @@ owl:TransitiveProperty a owl:Class, rdfs:Class;
     rdfs:isDefinedBy <>;
     rdfs:domain <https://ontology.example.com/genapp/application_graph/Datasource>;
     rdfs:range <http://www.w3.org/2001/XMLSchema#string>.
+<https://ontology.example.com/genapp/application_graph/datasource/endpoint/endpointUri> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "read-write URI"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Datasource>;
+    rdfs:range <https://ontology.example.com/genapp/application_graph/datasource/endpoint/readWriteUri>.
 <https://ontology.example.com/genapp/application_graph/datasource/format> a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Format"@en;
     rdfs:comment "Format enumeration value. One of: \"local\", \"json\", \"rdf\", \"xml\", \"csv\""@en;
