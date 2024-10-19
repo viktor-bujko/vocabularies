@@ -11,61 +11,61 @@
 :Edge a owl:Class, rdfs:Class;
     rdfs:label "Edge"@en;
     rdfs:comment "An edge represents a transition between the nodes in the graph. An edge allows the user of the generated application to move from one capability performed on an aggregate to other capability performed on another aggregate."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:subClassOf rdfs:Class, owl:Class.
 edge:type a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Edge Type"@en;
     rdfs:comment "A value coming from the enumeration of edge types."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :Edge;
     rdfs:range <http://www.w3.org/2001/XMLSchema#string>.
 edge:source a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Source Node"@en;
     rdfs:comment "IRI of the source node - (capability, aggregate) pair, from which the user wants to leave."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :Edge;
     rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
 egde:target a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Target Node"@en;
     rdfs:comment "IRI of the target node - (capability, aggregate) pair, to which the user wants to arrive."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :Edge;
     rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
 edge:iri a rdf:Property, owl:DatatypeProperty;
     rdfs:label "IRI"@en;
     rdfs:comment "Unique identifier of an application edge."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :Edge;
     rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
 endpoint:readWriteUri a owl:Class, rdfs:Class;
     rdfs:label "Endpoint URI"@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:subClassOf rdfs:Class, owl:Class.
 endpoint:read a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Read Endpoint URI"@en;
     rdfs:comment "URI of the endpoint which contains data in specified format. This endpoint will only be used for read operations."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain endpoint:readWriteUri;
     rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
 endpoint:write a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Write Endpoint URI"@en;
     rdfs:comment "URI of the endpoint which contains data in specified format. This endpoint will only be used for write operations."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain endpoint:readWriteUri;
     rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
 node:Configuration a owl:Class, rdfs:Class;
     rdfs:label "Node configuration"@en;
     rdfs:comment "Custom configuration of a node."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:subClassOf rdfs:Class, owl:Class.
 :starting a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Starting"@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain node:Configuration;
     rdfs:range <http://www.w3.org/2001/XMLSchema#boolean>.
 :pageTitle a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Page Title"@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain node:Configuration;
     rdfs:range rdf:langString.
 rdf:Alt a owl:Class, rdfs:Class;
@@ -530,93 +530,93 @@ owl:TransitiveProperty a owl:Class, rdfs:Class;
     rdfs:subClassOf owl:ObjectProperty, owl:Thing.
 :Datasource a owl:Class, rdfs:Class;
     rdfs:label "Datasource"@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:subClassOf rdfs:Class, owl:Class.
 datasource:label a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Label"@en;
     rdfs:comment "Name of the datasource."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :Datasource;
     rdfs:range <http://www.w3.org/2001/XMLSchema#string>.
 datasource:endpoint a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Endpoint URI"@en;
     rdfs:comment "URI of the endpoint which contains data in specified format. This endpoint will be used for both (read and write) operations."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :Datasource;
     rdfs:range <http://www.w3.org/2001/XMLSchema#string>.
 datasource:format a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Format"@en;
     rdfs:comment "Format enumeration value. One of: \"local\", \"json\", \"rdf\", \"xml\", \"csv\""@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :Datasource;
     rdfs:range <http://www.w3.org/2001/XMLSchema#string>.
 :Node a owl:Class, rdfs:Class;
     rdfs:label "Node"@en;
     rdfs:comment "An application graph node represents a unit of the generated application, i.e. an isolated, functional unit to be generated, through which application users fulfill their needs."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:subClassOf rdfs:Class, owl:Class.
 node:structure a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Structure"@en;
     rdfs:comment "IRI of a Dataspecer data structure model that this node instance refers to. Represents the subject instance on which a capability will be performed."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :Node;
     rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
 node:config a rdf:Property, owl:ObjectProperty;
     rdfs:label "Config"@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :Node;
     rdfs:range node:Configuration.
 node:label a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Label"@en;
     rdfs:comment "Custom, user-defined node name. Label is defined as a mapping between language and the label itself."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :Node;
     rdfs:range rdf:langString.
 :capability a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Capability"@en;
     rdfs:comment "IRI of a supported capability to be performed on a data structure model."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :Node;
     rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
 node:iri a rdf:Property, owl:DatatypeProperty;
     rdfs:label "IRI"@en;
     rdfs:comment "Unique identification of an application node"@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :Node;
     rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
 :ApplicationGraph a owl:Class, rdfs:Class;
     rdfs:label "Application Graph"@en, "Aplikačný graf"@sk;
     rdfs:comment "Represents the structure for generator's application graph. Application graph serves as a model of the application to be generated and is a formal representation of user's requirements on the application content."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:subClassOf rdfs:Class, owl:Class.
 :edges a rdf:Property, owl:ObjectProperty;
     rdfs:label "Edges"@en;
     rdfs:comment "Transitions between different nodes in the graph. Each edge allows the user of the generated application to move from one capability performed on an aggregate to other capability performed on another aggregate."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :ApplicationGraph;
     rdfs:range :Edge.
 :nodes a rdf:Property, owl:ObjectProperty;
     rdfs:label "Nodes"@en;
     rdfs:comment "Application graph nodes, where each node represents a separate, isolated functional unit of the application, that will be generated."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :ApplicationGraph;
     rdfs:range :Node.
 :label a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Label"@en, "označenie"@sk;
     rdfs:comment "The label or name of the application graph. Label is a human-readable graph identifier."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :ApplicationGraph;
     rdfs:range <http://www.w3.org/2001/XMLSchema#string>.
 :dataspecification a rdf:Property, owl:DatatypeProperty;
     rdfs:label "Data Specification"@en;
     rdfs:comment "IRI of a Dataspecer data specification from which the application is to be generated. All IRIs within application graph nodes refer to structural models within the context of this data specification."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :ApplicationGraph;
     rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
 :datasources a rdf:Property, owl:ObjectProperty;
     rdfs:label "Datasources"@en;
     rdfs:comment "Data sources to be used. Currently, only first datasource is considered."@en;
-    rdfs:isDefinedBy <https://ontology.example.com/genapp/application_graph/>;
+    rdfs:isDefinedBy <>;
     rdfs:domain :ApplicationGraph;
     rdfs:range :Datasource.
 rdf:value a rdf:Property, owl:ObjectProperty;
