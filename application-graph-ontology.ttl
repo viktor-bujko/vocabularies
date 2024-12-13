@@ -523,6 +523,432 @@ owl:TransitiveProperty a owl:Class, rdfs:Class;
     rdfs:comment "The class of transitive properties."@en;
     rdfs:isDefinedBy <>;
     rdfs:subClassOf owl:ObjectProperty, owl:Thing.
+<https://slovník.gov.cz/datový/turistické-cíle/pojem/turistický-cíl> a owl:Class, rdfs:Class;
+    rdfs:label "Turistický cíl"@cs, "Tourist destination"@en;
+    rdfs:comment "Samostatný turistický cíl."@cs, "A separate tourist destination"@en;
+    rdfs:isDefinedBy <>.
+<https://slovník.gov.cz/datový/turistické-cíle/pojem/bezbariérovost> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "bezbariérovost"@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/datový/turistické-cíle/pojem/turistický-cíl>;
+    rdfs:range <https://slovník.gov.cz/generický/bezbariérové-přístupy/pojem/bezbariérový-přístup>.
+<https://slovník.gov.cz/datový/turistické-cíle/pojem/kontakt> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "kontakt"@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/datový/turistické-cíle/pojem/turistický-cíl>;
+    rdfs:range <https://slovník.gov.cz/generický/kontakty/pojem/kontakt>.
+<https://slovník.gov.cz/datový/turistické-cíle/pojem/otevírací-doba> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "otevírací doba"@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/datový/turistické-cíle/pojem/turistický-cíl>;
+    rdfs:range <https://slovník.gov.cz/generický/čas/pojem/časová-specifikace>.
+<https://slovník.gov.cz/datový/turistické-cíle/pojem/provozovatel> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "provozovatel"@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/datový/turistické-cíle/pojem/turistický-cíl>;
+    rdfs:range <https://slovník.gov.cz/generický/lidé-a-osoby/pojem/člověk-či-osoba>.
+<https://slovník.gov.cz/datový/turistické-cíle/pojem/vstupné> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "vstupné"@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/datový/turistické-cíle/pojem/turistický-cíl>;
+    rdfs:range <https://slovník.gov.cz/generický/vstupné/pojem/vstupné>.
+<https://slovník.gov.cz/datový/sportoviště/pojem/kapacita> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "kapacita"@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/datový/turistické-cíle/pojem/turistický-cíl>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/celé-číslo>.
+<https://slovník.gov.cz/datový/turistické-cíle/pojem/kouření-povoleno> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "kouření povoleno"@cs, "smoking allowed"@en;
+    rdfs:comment "Určuje, zda je možné v turistickém cíli kouření tabákových výrobků."@cs, "Determines whether it is possible to smoke tobacco products in the tourist destination."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/datový/turistické-cíle/pojem/turistický-cíl>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/boolean>.
+<https://slovník.gov.cz/datový/turistické-cíle/pojem/veřejná-přístupnost> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "veřejná přístupnost"@cs, "public accessibility"@en;
+    rdfs:comment "Určuje, zda je turistický cíl veřejně přístupný."@cs, "Determines whether a tourist destination is open to the public."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/datový/turistické-cíle/pojem/turistický-cíl>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/boolean>.
+<https://slovník.gov.cz/generický/bezbariérové-přístupy/pojem/bezbariérový-přístup> a owl:Class, rdfs:Class;
+    rdfs:label "Bezbariérový přístup"@cs, "Barrier-free access"@en;
+    rdfs:comment "Popis bezbariérovosti objektu z uživatelského hlediska."@cs, "Description of the barrier-free accessibility of the building from the user's point of view."@en;
+    rdfs:isDefinedBy <>.
+<https://slovník.gov.cz/generický/bezbariérové-přístupy/pojem/nájezd-v-interiéru> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "nájezd v interiéru"@cs, "ramp in the interior"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/generický/bezbariérové-přístupy/pojem/bezbariérový-přístup>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/boolean>.
+<https://slovník.gov.cz/generický/bezbariérové-přístupy/pojem/plošina-v-interiéru> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "plošina v interiéru"@cs, "platform in the interior"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/generický/bezbariérové-přístupy/pojem/bezbariérový-přístup>.
+<https://slovník.gov.cz/generický/bezbariérové-přístupy/pojem/přístupný-interiér> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "přístupný interiér"@cs, "accessible interior"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/generický/bezbariérové-přístupy/pojem/bezbariérový-přístup>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/boolean>.
+<https://slovník.gov.cz/generický/kontakty/pojem/kontakt> a owl:Class, rdfs:Class;
+    rdfs:label "Kontakt"@cs, "Contact"@en;
+    rdfs:comment "Kontaktní údaje, např. na člověka, společnost, apod."@cs;
+    rdfs:isDefinedBy <>.
+<https://slovník.gov.cz/generický/kontakty/pojem/má-e-mailovou-adresu> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "má E-mailovou adresu"@cs, "e-mail"@en;
+    rdfs:comment "Kontaktní e-mailová adresa."@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/generický/kontakty/pojem/kontakt>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/řetězec>.
+<https://slovník.gov.cz/generický/kontakty/pojem/má-url> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "má URL"@cs, "URL"@en;
+    rdfs:comment "Webová kontaktní adresa: webová stránka či WebID."@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/generický/kontakty/pojem/kontakt>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://slovník.gov.cz/generický/kontakty/pojem/má-telefonní-číslo-na-mobilní-telefon> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "má telefonní číslo na mobilní telefon"@cs, "mobile phone number"@en;
+    rdfs:comment "Telefonní číslo na mobilní telefon."@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/generický/kontakty/pojem/kontakt>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/řetězec>.
+<https://slovník.gov.cz/generický/čas/pojem/časová-specifikace> a owl:Class, rdfs:Class;
+    rdfs:label "Časová specifikace"@cs, "Time specification"@en;
+    rdfs:comment "Časová specifikace určuje množinu časových úseků pomocí různých způsobů (časový interval, specifický časový interval, frekvence a další). Výsledná množina časových úseků je průnikem těchto množin. Kromě níže specifikovaných vlastností a vazeb je možné u této třídy použít také vlastnosti a vazby třídy Věc."@cs, "A time specification defines a set of time periods using various methods (time interval, specific time interval, frequency, and more). The resulting set of time periods is the intersection of these sets. In addition to the properties and constraints specified below, the properties and constraints of the Thing class can also be applied to this class."@en;
+    rdfs:isDefinedBy <>.
+<https://slovník.gov.cz/generický/čas/pojem/má-den-v-týdnu> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "má den v týdnu"@cs;
+    rdfs:comment "Hodnoty této vlastnosti jsou z číselníku pro dny v týdnu. Lze ji také využít pro vyjádření opakování dané události v konkrétním dnu v týdnu. Pokud je použita bez časového intervalu, znamená to, že specifikujeme například každé pondělí."@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/generický/čas/pojem/časová-specifikace>;
+    rdfs:range <https://slovník.gov.cz/generický/čas/pojem/den-v-týdnu>.
+<https://slovník.gov.cz/generický/čas/pojem/má-časovou-dobu> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "má časovou dobu"@cs;
+    rdfs:comment "Určuje opakující se čas nebo dobu ohraničenou různými údaji o čase. Příkladem může být otevírací doba v určitý den, nebo čas vývozu kontejneru."@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/generický/čas/pojem/časová-specifikace>;
+    rdfs:range <https://slovník.gov.cz/generický/čas/pojem/časová-doba>.
+<https://slovník.gov.cz/generický/lidé-a-osoby/pojem/člověk-či-osoba> a owl:Class, rdfs:Class;
+    rdfs:label "Člověk či osoba"@cs;
+    rdfs:isDefinedBy <>.
+<https://slovník.gov.cz/generický/vstupné/pojem/vstupné> a owl:Class, rdfs:Class;
+    rdfs:label "Vstupné"@cs, "Admission"@en;
+    rdfs:comment "Vstupné do objektu, na událost apod. vyjádřené jako cena v penězích pro danou kategorii návštěvníků, účastníků apod."@cs, "Admission to a facility, event, etc. expressed as a price in money for a given category of visitors, participants, etc."@en;
+    rdfs:isDefinedBy <>.
+<https://slovník.gov.cz/generický/čas/pojem/den-v-týdnu> a owl:Class, rdfs:Class;
+    rdfs:label "Den v týdnu"@cs;
+    rdfs:comment "Reprezentuje jednotlivé dny v týdnu jako položky číselníku pro dny v týdnu."@cs;
+    rdfs:isDefinedBy <>.
+<https://slovník.gov.cz/generický/čas/pojem/časová-doba> a owl:Class, rdfs:Class;
+    rdfs:label "Časová doba"@cs;
+    rdfs:comment "Určuje opakující se čas nebo dobu ohraničenou různými údaji o čase. Příkladem může být otevírací doba v určitý den, nebo čas vývozu kontejneru."@cs;
+    rdfs:isDefinedBy <>.
+<https://slovník.gov.cz/generický/čas/pojem/do> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "do"@cs;
+    rdfs:comment "Konec časového vymezení."@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/generický/čas/pojem/časová-doba>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/čas>.
+<https://slovník.gov.cz/generický/čas/pojem/od> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "od"@cs;
+    rdfs:comment "Začátek časového vymezení."@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/generický/čas/pojem/časová-doba>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/čas>.
+<https://slovník.gov.cz/generický/veřejná-místa/pojem/provozovatel> a owl:Class, rdfs:Class;
+    rdfs:label "Provozovatel"@cs, "Operator"@en;
+    rdfs:comment "Provozovatel veřejného místa."@cs;
+    rdfs:isDefinedBy <>.
+<https://slovník.gov.cz/generický/zaměstnání/pojem/provozovatel> a owl:Class, rdfs:Class;
+    rdfs:label "Provozovatel"@cs;
+    rdfs:comment "Instituce nebo člověk, který provozuje pracoviště."@cs;
+    rdfs:isDefinedBy <>.
+<https://slovník.gov.cz/generický/veřejná-místa/pojem/vlastník-jako-člověk> a owl:Class, rdfs:Class;
+    rdfs:label "Vlastník jako člověk"@cs;
+    rdfs:comment "Vlastník veřejného místa, který je nepodnikající fyzickou osobou."@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:subClassOf <https://slovník.gov.cz/generický/lidé/pojem/člověk>.
+<https://slovník.gov.cz/generický/lidé/pojem/člověk> a owl:Class, rdfs:Class;
+    rdfs:label "Člověk"@cs;
+    rdfs:comment "Fyzická osoba"@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:subClassOf <https://slovník.gov.cz/generický/lidé-a-osoby/pojem/člověk-či-osoba>.
+<https://slovník.gov.cz/generický/lidé/pojem/celé-jméno> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "celé jméno"@cs;
+    rdfs:comment "Celé jméno a případné tituly jako jeden řetězec."@cs;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://slovník.gov.cz/generický/lidé/pojem/člověk>.
+<http://www.wikidata.org/entity/Q1304193> a owl:Class, rdfs:Class;
+    rdfs:label "node"@en;
+    rdfs:comment "unit connected by edges with other units in a graph, in graph theory"@en;
+    rdfs:isDefinedBy <>.
+<http://www.wikidata.org/entity/Q141488> a owl:Class, rdfs:Class;
+    rdfs:label "graph"@en;
+    rdfs:comment "nodes and edges connecting pairs of them (mathematical object)"@en;
+    rdfs:isDefinedBy <>.
+<http://www.wikidata.org/entity/P7391> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "graph radius"@en;
+    rdfs:comment "the minimum eccentricity of any vertex of a graph"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <http://www.wikidata.org/entity/Q141488>.
+<http://www.wikidata.org/entity/Q216601> a owl:Class, rdfs:Class;
+    rdfs:label "object"@en;
+    rdfs:comment "in programming an instance of a class"@en;
+    rdfs:isDefinedBy <>.
+<http://www.wikidata.org/entity/Q1777473> a owl:Class, rdfs:Class;
+    rdfs:label "node"@en;
+    rdfs:comment "basic unit of a graph data structure such as a tree or linked list"@en;
+    rdfs:isDefinedBy <>.
+<https://ontology.example.com/genapp/application_graph/Applicationgraph> a owl:Class, rdfs:Class;
+    rdfs:label "Application Graph"@en, "Aplikačný graf"@sk;
+    rdfs:comment "Represents the structure for generator's application graph. Application graph serves as a model of the application to be generated and is a formal representation of user's requirements on the application content."@en, "Táto trieda reprezentuje štruktúru aplikačného grafu. Aplikačný graf slúži ako model pre generovanú aplikáciu a poskytuje spôsob, ako formálne zachytávať požiadavky používateľa na obsah vygenerovanej aplikácie."@sk;
+    rdfs:isDefinedBy <>.
+<https://ontology.example.com/genapp/application_graph/edges> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Edges"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Applicationgraph>;
+    rdfs:range <https://ontology.example.com/genapp/application_graph/ApplicationGraphEdge>.
+<https://ontology.example.com/genapp/application_graph/nodes> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Nodes"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Applicationgraph>;
+    rdfs:range <https://ontology.example.com/genapp/application_graph/ApplicationGraphNode>.
+<https://ontology.example.com/genapp/application_graph/datasources> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Datasources"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Applicationgraph>;
+    rdfs:range <https://ontology.example.com/genapp/application_graph/Datasource>.
+<https://ontology.example.com/genapp/application_graph/label> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "label"@en;
+    rdfs:comment "The label or name of the application graph. Label is a human-readable graph identifier."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Applicationgraph>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/řetězec>.
+<https://ontology.example.com/genapp/application_graph/dataspecification> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "dataspecification"@en;
+    rdfs:comment "IRI of a Dataspecer data specification from which the application is to be generated. All IRIs within application graph nodes refer to structural models within the context of this data specification."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Applicationgraph>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/ApplicationGraphEdge> a owl:Class, rdfs:Class;
+    rdfs:label "Application graph edge"@en, "Hrana aplikačného grafu"@sk;
+    rdfs:comment "An edge represents a transition between the nodes in the graph. An edge allows the user of the generated application to move from one capability performed on an aggregate to other capability performed on another aggregate."@en, "Hrana aplikačného grafu"@sk;
+    rdfs:isDefinedBy <>.
+<https://ontology.example.com/genapp/application_graph/edgeIri> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Edge IRI"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/ApplicationGraphEdge>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/edgeType> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Edge Type"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/ApplicationGraphEdge>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/řetězec>.
+<https://ontology.example.com/genapp/application_graph/sourceNode> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Source Node"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/ApplicationGraphEdge>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/targetNode> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Target Node"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/ApplicationGraphEdge>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/ApplicationGraphNode> a owl:Class, rdfs:Class;
+    rdfs:label "Application graph node"@en, "Uzol aplikačného grafu"@sk;
+    rdfs:comment "An application graph node represents a unit of the generated application, i.e. an isolated, functional unit to be generated, through which application users fulfill their needs."@en, "Uzol aplikačného grafu"@sk;
+    rdfs:isDefinedBy <>.
+<https://my-model-nhrvt.iri.todo.com/entities/config> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "config"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/ApplicationGraphNode>;
+    rdfs:range <https://ontology.example.com/genapp/application_graph/NodeConfiguration>.
+<https://my-model-nhrvt.iri.todo.com/entities/nodeIri> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Node IRI"@en;
+    rdfs:comment "Unique identification of an application node"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/ApplicationGraphNode>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://my-model-nhrvt.iri.todo.com/entities/structure> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "structure"@en;
+    rdfs:comment "IRI of a Dataspecer data structure model that this node instance refers to. Represents the subject instance on which a capability will be performed."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/ApplicationGraphNode>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://my-model-nhrvt.iri.todo.com/entities/nodeLabel> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Node Label"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/ApplicationGraphNode>;
+    rdfs:range rdf:langString.
+<https://my-model-nhrvt.iri.todo.com/entities/capability> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "capability"@en;
+    rdfs:comment "IRI of a supported capability to be performed on a data structure model."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/ApplicationGraphNode>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/Datasource> a owl:Class, rdfs:Class;
+    rdfs:label "Datasource"@en;
+    rdfs:isDefinedBy <>.
+<https://ontology.example.com/genapp/application_graph/endpointUri> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Endpoint URI"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Datasource>;
+    rdfs:range <https://ontology.example.com/genapp/application_graph/EndpointUri>.
+<https://ontology.example.com/genapp/application_graph/datasource/endpoint/endpointUri> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "read-write URI"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Datasource>;
+    rdfs:range <https://ontology.example.com/genapp/application_graph/datasource/endpoint/readWriteUri>.
+<https://ontology.example.com/genapp/application_graph/datasourceEndpointUri> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Endpoint Uri"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Datasource>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/dataSourceLabel> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "label"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Datasource>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/řetězec>.
+<https://ontology.example.com/genapp/application_graph/datasourceFormat> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "format"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Datasource>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/řetězec>.
+<https://ontology.example.com/genapp/application_graph/datasource/label> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Label"@en;
+    rdfs:comment "Name of the datasource."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Datasource>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/řetězec>.
+<https://ontology.example.com/genapp/application_graph/datasource/format> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Format"@en;
+    rdfs:comment "Format enumeration value. One of: \"local\", \"json\", \"rdf\", \"xml\", \"csv\""@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Datasource>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/řetězec>.
+<https://ontology.example.com/genapp/application_graph/datasource/endpoint> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Endpoint URI"@en;
+    rdfs:comment "URI of the endpoint which contains data in specified format. This endpoint will be used for both (read and write) operations."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Datasource>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/řetězec>.
+<https://ontology.example.com/genapp/application_graph/NodeConfiguration> a owl:Class, rdfs:Class;
+    rdfs:label "Node configuration"@en;
+    rdfs:isDefinedBy <>.
+<https://my-model-nhrvt.iri.todo.com/entities/starting> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "starting"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/NodeConfiguration>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/boolean>.
+<https://my-model-nhrvt.iri.todo.com/entities/pageTitle> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Page Title"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/NodeConfiguration>;
+    rdfs:range rdf:langString.
+<https://ontology.example.com/genapp/application_graph/EndpointUri> a owl:Class, rdfs:Class;
+    rdfs:label "Endpoint Uri"@en;
+    rdfs:isDefinedBy <>.
+<https://my-model-nhrvt.iri.todo.com/entities/datasourceUriRead> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "read"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/EndpointUri>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://my-model-nhrvt.iri.todo.com/entities/datasourceUriWrite> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "write"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/EndpointUri>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/ApplicationGraph> a owl:Class, rdfs:Class;
+    rdfs:label "Application Graph"@en, "Aplikačný graf"@sk;
+    rdfs:comment "Represents the structure for generator's application graph. Application graph serves as a model of the application to be generated and is a formal representation of user's requirements on the application content."@en;
+    rdfs:isDefinedBy <>.
+<https://ontology.example.com/genapp/application_graph/Edge> a owl:Class, rdfs:Class;
+    rdfs:label "Edge"@en;
+    rdfs:comment "An edge represents a transition between the nodes in the graph. An edge allows the user of the generated application to move from one capability performed on an aggregate to other capability performed on another aggregate."@en;
+    rdfs:isDefinedBy <>.
+<https://ontology.example.com/genapp/application_graph/edge/iri> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "IRI"@en;
+    rdfs:comment "Unique identifier of an application edge."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Edge>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/edge/source> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Source Node"@en;
+    rdfs:comment "IRI of the source node - (capability, aggregate) pair, from which the user wants to leave."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Edge>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/edge/target> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Target Node"@en;
+    rdfs:comment "IRI of the target node - (capability, aggregate) pair, to which the user wants to arrive."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Edge>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/edge/type> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Edge Type"@en;
+    rdfs:comment "A value coming from the enumeration of edge types."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Edge>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/řetězec>.
+<https://ontology.example.com/genapp/application_graph/Node> a owl:Class, rdfs:Class;
+    rdfs:label "Node"@en;
+    rdfs:comment "An application graph node represents a unit of the generated application, i.e. an isolated, functional unit to be generated, through which application users fulfill their needs."@en;
+    rdfs:isDefinedBy <>.
+<https://ontology.example.com/genapp/application_graph/node/config> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Config"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Node>;
+    rdfs:range <https://ontology.example.com/genapp/application_graph/node/Configuration>.
+<https://ontology.example.com/genapp/application_graph/node/iri> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "IRI"@en;
+    rdfs:comment "Unique identification of an application node"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Node>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/capability> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Capability"@en;
+    rdfs:comment "IRI of a supported capability to be performed on a data structure model."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Node>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/node/structure> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Structure"@en;
+    rdfs:comment "IRI of a Dataspecer data structure model that this node instance refers to. Represents the subject instance on which a capability will be performed."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Node>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/node/label> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Label"@en;
+    rdfs:comment "Custom, user-defined node name. Label is defined as a mapping between language and the label itself."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/Node>;
+    rdfs:range rdf:langString.
+<https://ontology.example.com/genapp/application_graph/node/Configuration> a owl:Class, rdfs:Class;
+    rdfs:label "Node configuration"@en;
+    rdfs:comment "Custom configuration of a node."@en;
+    rdfs:isDefinedBy <>.
+<https://ontology.example.com/genapp/application_graph/starting> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Starting"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/node/Configuration>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/boolean>.
+<https://ontology.example.com/genapp/application_graph/pageTitle> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Page Title"@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/node/Configuration>;
+    rdfs:range rdf:langString.
+<https://ontology.example.com/genapp/application_graph/datasource/endpoint/readWriteUri> a owl:Class, rdfs:Class;
+    rdfs:label "Endpoint URI"@en;
+    rdfs:isDefinedBy <>.
+<https://ontology.example.com/genapp/application_graph/datasource/endpoint/read> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Read Endpoint URI"@en;
+    rdfs:comment "URI of the endpoint which contains data in specified format. This endpoint will only be used for read operations."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/datasource/endpoint/readWriteUri>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
+<https://ontology.example.com/genapp/application_graph/datasource/endpoint/write> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Write Endpoint URI"@en;
+    rdfs:comment "URI of the endpoint which contains data in specified format. This endpoint will only be used for write operations."@en;
+    rdfs:isDefinedBy <>;
+    rdfs:domain <https://ontology.example.com/genapp/application_graph/datasource/endpoint/readWriteUri>;
+    rdfs:range <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/url>.
 <https://ontology.example.com/genapp/application_graph/Datasource> a owl:Class, rdfs:Class;
     rdfs:label "Datasource"@en;
     rdfs:isDefinedBy <>;
